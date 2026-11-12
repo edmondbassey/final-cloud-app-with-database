@@ -1,15 +1,42 @@
+# Django online course application
 
-**General Notes**
+An IBM Developer Skills Network coursework starter for an online course catalogue with user accounts, lessons and enrolment.
 
-An `onlinecourse` app has already been provided in this repo upon which you will be adding a new assesement feature.
+## Implemented structure
 
-- If you want to develop the final project on Theia hosted by [IBM Developer Skills Network](https://labs.cognitiveclass.ai/), you will need to create the same project structure on Theia workspace and save it everytime you close the browser
-- Or you could develop the final project locally by setting up your own Python runtime and IDE
-- Hints for the final project are left on source code files
-- You may choose any cloud platform for deployment (default is IBM Cloud Foundry)
-- Depends on your deployment, you may choose any SQL database Django supported such as SQLite3, PostgreSQL, and MySQL (default is SQLite3)
+The `onlinecourse` app contains:
 
-**ER Diagram**
-For your reference, we have prepared the ER diagram design for the new assesement feature.
+- Instructor, learner, course, lesson and enrolment models.
+- Registration, login and logout views.
+- Course list/detail views and an enrolment flow.
+- Django templates and static assets.
 
-![Onlinecourse ER Diagram](https://github.com/ibm-developer-skills-network/final-cloud-app-with-database/blob/master/static/media/course_images/onlinecourse_app_er.png)
+## Assessment exercise
+
+The original course asks students to add questions, choices, submissions and exam results. In this snapshot those models and views remain instructions and commented examples. The assessment feature is unfinished, and `onlinecourse/tests.py` is still a placeholder.
+
+## Layout
+
+- `manage.py` — Django management commands.
+- `myproject/` — project configuration.
+- `onlinecourse/` — models, views, routes and templates.
+- `static/` — course images and other assets.
+
+## Development setup
+
+The pinned Django, Pillow and Gunicorn versions come from the original course environment. Use a compatible isolated environment when working with this historical snapshot.
+
+```sh
+python -m venv .venv
+. .venv/bin/activate
+python -m pip install -r requirements.txt
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
+```
+
+Dependency updates, the assessment feature and meaningful automated tests are follow-up work.
+
+## Attribution
+
+Forked from [IBM Developer Skills Network](https://github.com/ibm-developer-skills-network/final-cloud-app-with-database). The original [Apache 2.0 licence](LICENSE) is retained.
